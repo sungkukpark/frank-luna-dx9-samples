@@ -19,3 +19,6 @@ mt.dep
 
 # 제안 문서 (로컬 전용)
 SUGGEST.md
+
+# Visual Studio 로컬 설정
+.vs/
