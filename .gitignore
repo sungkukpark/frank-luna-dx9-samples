@@ -1,0 +1,18 @@
+# Claude Code 로컬 설정
+.claude/settings.local.json
+
+# Visual Studio 빌드 산출물
+Debug/
+Release/
+*.obj
+*.ilk
+*.pdb
+*.exe
+*.idb
+*.suo
+*.ncb
+*.user
+*.exe.embed.manifest
+*.exe.embed.manifest.res
+*.exe.intermediate.manifest
+mt.dep
