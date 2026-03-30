@@ -16,3 +16,6 @@ Release/
 *.exe.embed.manifest.res
 *.exe.intermediate.manifest
 mt.dep
+
+# 제안 문서 (로컬 전용)
+SUGGEST.md
