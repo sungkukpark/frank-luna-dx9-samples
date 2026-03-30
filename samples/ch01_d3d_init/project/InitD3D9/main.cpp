@@ -1,7 +1,7 @@
 #include <windows.h>
 #include "d3dUtility.h"
 
-IDirect3DDevice9* Device = 0;
+IDirect3DDevice9* Device = 0;	// instantiating a global variable for the device
 
 // Initialization
 bool Setup()
@@ -54,8 +54,19 @@ int WINAPI WinMain(
 	if (!d3d::InitD3D(hInstance,
 		800, 600, true, D3DDEVTYPE_HAL, &Device))
 	{
-
+		::MessageBox(0, "InitD3D() - FAILED", 0, 0);
+		return 0;
 	}
+
+	if (!Setup())
+	{
+		::MessageBox(0, "InitD3D() - FAILED", 0, 0);
+		return 0;
+	}
+
+	d3d::EnterMsgLoop(Display);
+
+	Cleanup();
 
 	// return 0 to Windows
 	return 0;
