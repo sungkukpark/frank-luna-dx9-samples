@@ -1,7 +1,18 @@
-#include <stdio.h>	// Include the standard input/output header
+#include <windows.h>
 
-int main(void)		// Out program starts here
+// The entry point for any Windows program
+int WINAPI WinMain(
+	HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR lpCmdLine,
+	int nShowCmd)
 {
-	printf("hello, world!");	// print "hello, world!" into the console
-	return;						// return zero to windows
+	// create a "Hello, World!" message box using MessageBox()
+	MessageBox(NULL,
+		"Hello World!",
+		"Just another Hello World program!",
+		MB_ICONEXCLAMATION | MB_OK);
+
+	// return 0 to Windows
+	return 0;
 }
