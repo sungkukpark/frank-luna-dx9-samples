@@ -17,16 +17,39 @@
 /*
 * Global variables
 */
-IDirect3DDevice9* Device = 0;	// instantiating a global variable for the device
-
 const int Width = 640;
 const int Height = 480;
-
 const unsigned int BgColor = 0xffffffff;
 
-// Initialization
+IDirect3DDevice9* Device = 0;	        // instantiating a global variable for the device.
+IDirect3DVertexBuffer9* Triangle = 0;   // vertex buffer to store our triangle data.
+
+/*
+* Classes and Structures
+*/
+struct Vertex {
+    Vertex() {}
+
+    Vertex(float x, float y, float z)
+    {
+        _x = x, _y = y, _z = z;
+    }
+
+    float _x, _y, _z;
+
+    static const DWORD FVF;
+};
+const DWORD Vertex::FVF = D3DFVF_XYZ;
+
+// Framework Functions
 bool Setup()
 {
+    /*
+    * Create the vertex buffer.
+    */
+
+
+
     D3DXMATRIX proj;
     D3DXMatrixPerspectiveFovLH(
         &proj,							// result
