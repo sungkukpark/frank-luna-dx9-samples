@@ -9,7 +9,7 @@
 - **저자**: Frank D. Luna
 - **번역**: 최현호 역, 김성원 감수
 - **출판사**: 정보문화사
-- **예제 코드 출처**: https://www.d3dcoder.net/default.htm
+- **예제 코드 출처**: [d3dcoder.net](https://www.d3dcoder.net/default.htm)
 
 ## 구조
 
@@ -47,4 +47,4 @@
 ## 라이선스
 
 예제 코드의 저작권은 원저자 Frank D. Luna에게 있습니다.
-원본 코드는 https://www.d3dcoder.net/default.htm 에서 제공됩니다.
+원본 코드는 [d3dcoder.net](https://www.d3dcoder.net/default.htm)에서 제공됩니다.
