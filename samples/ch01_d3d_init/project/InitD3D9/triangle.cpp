@@ -47,9 +47,28 @@ bool Setup()
     /*
     * Create the vertex buffer.
     */
+    Device->CreateVertexBuffer(
+        3 * sizeof(Vertex),     // size in bytes
+        D3DUSAGE_WRITEONLY,     // flags
+        Vertex::FVF,            // vertex format
+        D3DPOOL_MANAGED,        // managed memory pool
+        &Triangle,              // return create vertex buffer
+        0);                     // not used - set to 0
 
+    // Fill the buffers with the triangle data.
+    Vertex* vertices;
 
+    Triangle->Lock(0, 0, (void**)&vertices, 0);
 
+    vertices[0] = Vertex(-1.0f, 0.0f, 2.0f);
+    vertices[1] = Vertex(0.0f, 1.0f, 2.0f);
+    vertices[2] = Vertex(1.0f, 0.0f, 2.0f);
+
+    Triangle->Unlock();
+
+    /*
+    * Set the projection matrix.
+    */
     D3DXMATRIX proj;
     D3DXMatrixPerspectiveFovLH(
         &proj,							// result
@@ -68,6 +87,7 @@ bool Setup()
 // Cleanup
 void Cleanup()
 {
+    d3d::Release<IDirect3DVertexBuffer9*>(Triangle);
 }
 
 bool Display(float timeDelta)
@@ -78,8 +98,11 @@ bool Display(float timeDelta)
             BgColor, 1.0f, 0);
         Device->BeginScene();
 
-        //Device->SetStreamSource(0, )
+        Device->SetStreamSource(0, Triangle, 0, sizeof(Vertex));
+        Device->SetFVF(Vertex::FVF);
 
+        // Draw one triangle.
+        Device->DrawPrimitive(D3DPT_TRIANGLELIST, 0, 1);
 
         Device->EndScene();
         Device->Present(0, 0, 0, 0); // present backbuffer
@@ -93,16 +116,16 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     switch (msg)
     {
     case WM_DESTROY:
-        PostQuitMessage(0);
+        ::PostQuitMessage(0);
         break;
 
     case WM_KEYDOWN:
         if (wParam == VK_ESCAPE)
-            DestroyWindow(hwnd);
+            ::DestroyWindow(hwnd);
         break;
     }
 
-    return DefWindowProc(hwnd, msg, wParam, lParam);
+    return ::DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
 // The entry point for any Windows program
