@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\..\..\engine\src\d3dUtility.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\engine\include\d3dUtility.h">
