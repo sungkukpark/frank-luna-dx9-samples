@@ -2,7 +2,7 @@
 
 ## 프로젝트 개요
 
-Frank D. Luna의 "Introduction to 3D Game Programming with DirectX 9.0" 예제 코드 저장소입니다.
+Frank D. Luna의 『Introduction to 3D Game Programming with DirectX 9.0』 예제 코드 저장소입니다.
 원본 소스: [d3dcoder.net](https://www.d3dcoder.net/default.htm)
 
 ## 필수 SDK
