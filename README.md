@@ -4,7 +4,7 @@
 
 ## 개요
 
-이 저장소는 Frank D. Luna 저 **"Introduction to 3D Game Programming with DirectX 9.0"** (한국어판: DirectX 9를 이용한 3D GAME 프로그래밍 입문)의 예제 소스 코드를 포함합니다.
+이 저장소는 Frank D. Luna 저 『Introduction to 3D Game Programming with DirectX 9.0』 (한국어판: 『DirectX 9를 이용한 3D GAME 프로그래밍 입문』)의 예제 소스 코드를 포함합니다.
 
 - **저자**: Frank D. Luna
 - **번역**: 최현호 역, 김성원 감수
@@ -40,7 +40,7 @@
 
 ## 개발 환경
 
-- DirectX 9.0 SDK
+- [DirectX SDK (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=6812)
 - Microsoft Visual C++
 - Windows
 
