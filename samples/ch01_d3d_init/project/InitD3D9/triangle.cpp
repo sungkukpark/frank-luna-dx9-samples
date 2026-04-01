@@ -1,3 +1,16 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+// File: triangle.cpp
+// 
+// Author: Sungkuk Park (C) All Rights Reserved
+//
+// System: Intel Core Ultra 9 275HX, 64GB, NVIDIA GeForece RTX 5090 Laptop GPU,
+//         Windows 11 Pro, Visual Studio 2022 (v145) 
+//
+// Description : Renders a triangle in wire-frame mode.  Demonstrates vertex buffers, 
+//               render states, and drawing commands.
+//          
+//////////////////////////////////////////////////////////////////////////////////////////////////
 #include <windows.h>
 #include "d3dUtility.h"
 
@@ -40,7 +53,12 @@ bool Display(float timeDelta)
     {
         Device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
             BgColor, 1.0f, 0);
+        Device->BeginScene();
 
+        //Device->SetStreamSource(0, )
+
+
+        Device->EndScene();
         Device->Present(0, 0, 0, 0); // present backbuffer
     }
 
